@@ -1,0 +1,14 @@
+py-cord==2.7.0rc2
+chat-exporter==2.8.4
+aiohttp==3.9.5
+aiofiles==23.2.1
+pydantic==2.8.2
+python-dotenv==1.0.1
+qrcode[pil]==7.4.2
+Pillow==10.4.0
+python-dateutil==2.9.0
+colorlog==6.8.2
+pytest==8.3.2
+pytest-asyncio==0.23.8
+pytest-cov==5.0.0
+httpx==0.25.2

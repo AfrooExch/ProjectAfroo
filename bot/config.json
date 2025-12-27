@@ -1,0 +1,174 @@
+{
+  "guild": {
+    "id": 1381858031830302791,
+    "voice_stats_channel": 0
+  },
+
+  "channels": {
+    "exchange": 1411701078700855336,
+    "ticket_log": 1381991033474252904,
+    "tos": 1381980371968856225,
+    "fees": 1381980501052755989,
+    "reputation": 1381980624516288685,
+    "exchange_history": 1411700275214946475,
+    "public_exchange_log_channel": 0,
+    "admin_panel": 1411547837212131348,
+    "support_panel": 1411547608215847022,
+    "application_panel": 1387457890595508267,
+    "user_dashboard": 1431344634088656926,
+    "leaderboard": 1411700657827614812,
+    "deposit_panel": 1411547365973692456,
+    "swap_panel": 1439394338827403488,
+    "wallet_panel": 1439394441294118922,
+    "automm_panel": 1439394383043760260,
+    "welcome": 1381858032602058857,
+    "website": 1439394147336327239,
+    "exchanger_panel": 1411547365973692456,
+    "exchanger_faq": 1412893016657625129,
+    "exchanger_rules": 1381981111252418691,
+    "exchanger_chat": 1451137765881151489,
+    "exch_mod_chat": 1432581075607228507,
+    "admin_chat": 1393095465393717250,
+    "admin_alerts": 1393095465393717250,
+    "transcript": 1381991033474252904,
+    "member_logs": 1393095328789565580,
+    "message_logs": 1393094685676802069,
+    "server_logs": 1393095786031747202
+  },
+
+  "categories": {
+    "tickets": 1381980106691444838,
+    "exchanger_tickets": 1450722639973974066,
+    "claimed_tickets": 1442242967812182247,
+    "support_tickets": 1439394745964040244,
+    "exchanger_applications": 1451339742733013003,
+    "swaps": 1451011560091816107,
+    "escrow": 1451011597689425940,
+    "archived_support": 0,
+    "archived_tickets": 0
+  },
+
+  "roles": {
+    "exchanger": 1381982080560402462,
+    "staff": 1401649553194881155,
+    "head_admin": 1441186062310309888,
+    "assistant_admin": 1423434603107975239,
+    "customer": 1381982222558564464,
+    "exchanger_limit_100": 0,
+    "exchanger_limit_250": 0,
+    "exchanger_unlimited": 0,
+    "exchanger_paypal": 1431732911140503583,
+    "exchanger_cashapp": 1431733031999377428,
+    "exchanger_applepay": 1431733169777938594,
+    "exchanger_venmo": 1431733262367326370,
+    "exchanger_zelle": 1431733429929775104,
+    "exchanger_chime": 1431733785086394408,
+    "exchanger_revolut": 1431734050217005136,
+    "exchanger_skrill": 1431734179086860468,
+    "exchanger_bank": 1431734579290570752,
+    "exchanger_paysafe": 1431734710744387684,
+    "exchanger_binance_gift_card": 1431734831028633650,
+    "exchanger_crypto": 1381982080560402462,
+    "milestone_roles": {
+      "500": 1381982616130949280,
+      "1500": 1381982829910560859,
+      "2500": 1395119128422912020,
+      "5000": 1381983182865436763,
+      "10000": 1381983431704969397,
+      "25000": 1381984307870044252,
+      "50000": 1438656022733656215
+    }
+  },
+
+  "emoji_names": {
+    "BTC": "BITCOIN",
+    "LTC": "LTC",
+    "ETH": "ETH",
+    "SOL": "SOL",
+    "USDT": "USDT",
+    "USDC": "USDC",
+    "XRP": "XRP",
+    "BINANCE": "BINANCE",
+    "TRX": "TRX",
+    "MATIC": "MATIC",
+    "AVAX": "AVAX",
+    "DOGE": "DOGE",
+    "BNB": "BNB",
+    "bitcoin": "BITCOIN",
+    "ltc": "LTC",
+    "eth": "ETH",
+    "sol": "SOL",
+    "usdt": "USDT",
+    "usdc": "USDC",
+    "crypto": "CRYPTO",
+    "paypal": "PAYPAL",
+    "cashapp": "CASHAPP",
+    "venmo": "VENMO",
+    "zelle": "ZELLE",
+    "applepay": "APPLEPAY",
+    "revolut": "REVOLUT",
+    "chime": "CHIME",
+    "skrill": "SKRIL",
+    "bank": "BANK",
+    "paysafe": "PAYSAFE"
+  },
+
+  "deposits": {
+    "assets_enabled": ["BTC", "ETH", "LTC", "SOL", "USDT-SOL", "USDC-SOL"],
+    "claim_limit_multiplier": 0.8,
+    "hold_multiplier": 1.0,
+    "owner_wallets": {
+      "BTC": "bc1q2dshq3fv3nxpu0h5t06a2drcpl89u9xvncdena",
+      "ETH": "0xfE19FF82d35752F49970875772A33DCa992B389C",
+      "LTC": "LX12qnJEQ6YoUWQ2CatK4jRVYRGd42LPad",
+      "SOL": "GxSyadHmo9Xfzmy4EtwCS1a6dBw1KdhVXfujwY72Nzjd",
+      "USDT": "GxSyadHmo9Xfzmy4EtwCS1a6dBw1KdhVXfujwY72Nzjd",
+      "USDC": "GxSyadHmo9Xfzmy4EtwCS1a6dBw1KdhVXfujwY72Nzjd"
+    },
+    "BTC": {
+      "network": "mainnet",
+      "min_confirmations": 2
+    },
+    "ETH": {
+      "network": "mainnet",
+      "min_confirmations": 12
+    },
+    "LTC": {
+      "network": "mainnet",
+      "min_confirmations": 3
+    },
+    "SOL": {
+      "network": "mainnet",
+      "min_confirmations": 32
+    }
+  },
+
+  "fees": {
+    "rate": 0.02,
+    "owner_percentage_of_exchange_amount": 0.02,
+    "min_owner_fee_usd": 0.50
+  },
+
+  "security": {
+    "allow_key_reveal": false,
+    "key_reveal_window_seconds": 300
+  },
+
+  "discord": {
+    "webhooks": {
+      "tickets": "",
+      "deposits": "",
+      "system": ""
+    }
+  },
+
+  "automm": {
+    "enabled": true,
+    "assets": ["LTC", "BTC", "SOL"]
+  },
+
+  "transcripts": {
+    "enabled": true,
+    "base_url": "https://transcripts.afrooexch.com"
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "paypal_balance": {
+    "name": "PayPal Balance",
+    "display_name": "PayPal (Balance Only)",
+    "terms": [
+      "You MUST send from your PayPal balance only",
+      "You MUST provide a screenshot showing balance send",
+      "DO NOT use credit cards, debit cards, or bank transfers",
+      "Sending with cards may result in loss of funds (no refunds)",
+      "PayPal may freeze your account if you use cards for crypto",
+      "We are NOT responsible for PayPal account restrictions"
+    ],
+    "risks": [
+      "PayPal prohibits cryptocurrency transactions",
+      "Your account may be limited or banned",
+      "Chargebacks are NOT allowed and will result in permanent ban"
+    ]
+  },
+  "paypal_goods": {
+    "name": "paypal_goods",
+    "display_name": "PayPal (Goods & Services)",
+    "terms": [
+      "Higher fees apply (PayPal G&S fee + our fee)",
+      "DO NOT open disputes or chargebacks",
+      "Opening a dispute will result in permanent ban",
+      "This option is for buyers who want extra protection",
+      "Exchanger is protected by our escrow system"
+    ],
+    "risks": [
+      "PayPal may still freeze funds",
+      "Transactions may be reversed by PayPal",
+      "Your account may be restricted"
+    ]
+  },
+  "cashapp": {
+    "name": "cashapp",
+    "display_name": "CashApp",
+    "terms": [
+      "You MUST send from your CashApp balance",
+      "Provide your $cashtag for exchanger to send to",
+      "Include your ticket ID in the note/memo",
+      "DO NOT use credit cards (will be declined or reversed)",
+      "CashApp prohibits crypto transactions - use at own risk"
+    ],
+    "risks": [
+      "CashApp may close your account",
+      "Transactions may be reversed",
+      "No refunds for violations"
+    ]
+  },
+  "venmo": {
+    "name": "venmo",
+    "display_name": "Venmo",
+    "terms": [
+      "MUST use Friends & Family option",
+      "DO NOT select goods or services",
+      "DO NOT mention crypto in notes",
+      "Keep transaction description generic (e.g., 'Thanks!', 'Dinner')",
+      "Venmo prohibits crypto - use at own risk"
+    ],
+    "risks": [
+      "Venmo may reverse transaction",
+      "Your account may be banned",
+      "No refunds if account is frozen"
+    ]
+  },
+  "zelle": {
+    "name": "zelle",
+    "display_name": "Zelle",
+    "terms": [
+      "Verify recipient details carefully",
+      "Transactions are IRREVERSIBLE",
+      "Double-check phone/email before sending",
+      "Include ticket ID if asked",
+      "Zelle is generally crypto-friendly"
+    ],
+    "risks": [
+      "Cannot be reversed once sent",
+      "Bank may ask questions about crypto",
+      "Scammers may impersonate - always verify"
+    ]
+  },
+  "bank_transfer": {
+    "name": "bank_transfer",
+    "display_name": "Bank Transfer / Wire",
+    "terms": [
+      "Include reference number provided by exchanger",
+      "Transactions may take 1-3 business days",
+      "Keep receipt/confirmation for your records",
+      "International transfers may have additional fees",
+      "Verify bank details carefully"
+    ],
+    "risks": [
+      "Delays may occur",
+      "Wire fees are non-refundable",
+      "Incorrect details may result in lost funds"
+    ]
+  },
+  "chime": {
+    "name": "chime",
+    "display_name": "Chime",
+    "terms": [
+      "Send via Chime Pay",
+      "DO NOT mention crypto in transaction notes",
+      "Chime may restrict accounts for crypto activity",
+      "Keep notes generic"
+    ],
+    "risks": [
+      "Chime may close your account",
+      "Transactions may be reversed",
+      "Account restrictions are common"
+    ]
+  },
+  "applepay": {
+    "name": "applepay",
+    "display_name": "Apple Pay",
+    "terms": [
+      "Send from Apple Cash balance",
+      "DO NOT use linked credit/debit cards",
+      "Keep notes generic - no crypto mentions",
+      "Provide Apple ID email for verification"
+    ],
+    "risks": [
+      "Apple may restrict your account",
+      "Transactions may be reversed",
+      "Credit card use may trigger fraud alerts"
+    ]
+  },
+  "crypto": {
+    "name": "crypto",
+    "display_name": "Cryptocurrency",
+    "terms": [
+      "Verify wallet address carefully (copy/paste, don't type)",
+      "Transactions are IRREVERSIBLE",
+      "You are responsible for network fees",
+      "Wait for required confirmations",
+      "Double-check network (ERC-20, BTC, TRC-20, etc.)",
+      "We are NOT responsible for wrong address sends"
+    ],
+    "risks": [
+      "Sending to wrong address = permanent loss",
+      "Network fees may be high during congestion",
+      "Confirmations may take longer during high traffic",
+      "Wrong network selection will result in lost funds"
+    ]
+  }
+}

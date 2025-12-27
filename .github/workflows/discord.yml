@@ -1,0 +1,104 @@
+name: Discord Push Notifications
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Send Discord Notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          # Get commit stats
+          ADDITIONS=$(git show --shortstat | grep -oP '\d+(?= insertion)' || echo "0")
+          DELETIONS=$(git show --shortstat | grep -oP '\d+(?= deletion)' || echo "0")
+          FILES_CHANGED=$(git show --name-only --format="" | wc -l)
+
+          # Use purple gradient color (0x9E6BFF from bot's colors.py)
+          COLOR=10382335
+
+          # Build JSON payload using jq (safe escaping)
+          jq -n \
+            --arg title "Push to ${GITHUB_REF##*/}" \
+            --arg repo "${{ github.repository }}" \
+            --arg branch "${GITHUB_REF##*/}" \
+            --arg sha "${GITHUB_SHA:0:7}" \
+            --arg full_sha "${{ github.sha }}" \
+            --arg commit_msg "${{ github.event.head_commit.message }}" \
+            --arg author "${{ github.actor }}" \
+            --arg additions "$ADDITIONS" \
+            --arg deletions "$DELETIONS" \
+            --arg files "$FILES_CHANGED" \
+            --arg compare_url "https://github.com/${{ github.repository }}/compare/${{ github.event.before }}...${{ github.sha }}" \
+            --arg timestamp "$(date -u +%Y-%m-%dT%H:%M:%S.000Z)" \
+            --argjson color "$COLOR" \
+            '{
+              username: "GitHub",
+              avatar_url: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+              embeds: [{
+                title: $title,
+                description: ("**Repository:** [\($repo)](https://github.com/\($repo))\n**Branch:** `\($branch)`\n**Commit:** [`\($sha)`](https://github.com/\($repo)/commit/\($full_sha))\n\n" + ($commit_msg | split("\n")[0])),
+                color: $color,
+                fields: [
+                  {
+                    name: "📝 Commits",
+                    value: "1",
+                    inline: true
+                  },
+                  {
+                    name: "📂 Files",
+                    value: $files,
+                    inline: true
+                  },
+                  {
+                    name: "👤 Author",
+                    value: ("[\($author)](https://github.com/\($author))"),
+                    inline: true
+                  },
+                  {
+                    name: "📊 Changes",
+                    value: ("**+\($additions)** / **-\($deletions)**"),
+                    inline: true
+                  },
+                  {
+                    name: "🔗 Compare",
+                    value: ("[View Changes](\($compare_url))"),
+                    inline: true
+                  }
+                ],
+                author: {
+                  name: $author,
+                  icon_url: ("https://github.com/\($author).png"),
+                  url: ("https://github.com/\($author)")
+                },
+                footer: {
+                  text: ("ProjectAfroo • \($repo)")
+                },
+                timestamp: $timestamp
+              }]
+            }' > /tmp/payload.json
+
+          # Send to Discord
+          HTTP_STATUS=$(curl -s -o /tmp/response.txt -w "%{http_code}" \
+            -H "Content-Type: application/json" \
+            -d @/tmp/payload.json \
+            "$DISCORD_WEBHOOK")
+
+          # Check response
+          if [ "$HTTP_STATUS" -ge 200 ] && [ "$HTTP_STATUS" -lt 300 ]; then
+            echo "✅ Discord notification sent successfully (HTTP $HTTP_STATUS)"
+          else
+            echo "❌ Failed to send Discord notification (HTTP $HTTP_STATUS)"
+            cat /tmp/response.txt
+            exit 1
+          fi

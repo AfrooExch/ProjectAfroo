@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 14 13 20;
+    --foreground: 255 255 255;
+  }
+
+  * {
+    @apply border-dark-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-foreground antialiased;
+    background: radial-gradient(circle at top right, #1c1528 0%, #0d0b14 70%);
+    background-attachment: fixed;
+    color: #a9a4be;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white font-bold;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer components {
+  /* Card Components - Glass Morphism */
+  .card {
+    @apply rounded-xl p-6 transition-all duration-300;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(143, 96, 255, 0.3);
+    box-shadow: 0 0 18px rgba(143, 96, 255, 0.25);
+    transform: translateY(-2px);
+  }
+
+  /* Button Components - Neon Glow */
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-white;
+    background: linear-gradient(90deg, #bfa3ff, #6d35ff);
+    box-shadow: 0 0 18px rgba(143, 96, 255, 0.25);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 25px rgba(143, 96, 255, 0.45);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-white;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(143, 96, 255, 0.3);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(143, 96, 255, 0.5);
+    box-shadow: 0 0 18px rgba(143, 96, 255, 0.35);
+  }
+
+  .btn-ghost {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+    background: linear-gradient(90deg, #bfa3ff, #6d35ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .btn-ghost:hover {
+    background: rgba(143, 96, 255, 0.1);
+    -webkit-text-fill-color: white;
+    box-shadow: 0 0 12px rgba(143, 96, 255, 0.2);
+  }
+
+  /* Input Components - Glass */
+  .input {
+    @apply w-full px-4 py-3 rounded-lg bg-dark-card/40 backdrop-blur-glass border border-dark-border/50;
+    @apply text-white placeholder-gray-500 focus:outline-none focus:ring-2;
+    @apply focus:ring-primary-glow/50 focus:border-primary transition-all;
+  }
+
+  /* Gradient Text - Neon */
+  .gradient-text {
+    background: linear-gradient(90deg, #bfa3ff, #6d35ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 12px rgba(143, 96, 255, 0.45));
+  }
+
+  /* Glass Effect */
+  .glass {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  /* Hero Title Glow */
+  .hero-title {
+    text-shadow: 0px 0px 12px rgba(140, 90, 255, 0.45);
+  }
+
+  /* Triangle Layer */
+  .triangle-layer {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    opacity: 0.12;
+    filter: blur(4px);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
